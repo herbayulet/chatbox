@@ -1,13 +1,12 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, TouchableOpacity, View, SafeAreaView } from "react-native";
 
 const Layout = ({ children }) => {
   return (
-    <View className="pt-10">
+    <View className="flex-1 pt-10">
       <Text className="text-center my-5 text-lg text-green-500 font-semibold">
         Open WhatsApp chat box from React-native App
       </Text>
-      <SafeAreaView>{children}</SafeAreaView>
+      <View className="flex-1">{children}</View>
     </View>
   );
 };

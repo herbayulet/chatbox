@@ -4,6 +4,7 @@ import { Alert, Linking } from "react-native";
 export const openWhatsApp = () => {
   const [mobileNo, setMobileNo] = useState("");
   const [message, setMessage] = useState("");
+
   const chatWhatsapp = () => {
     if (mobileNo) {
       if (message) {
@@ -19,8 +20,15 @@ export const openWhatsApp = () => {
         Alert.alert("Please enter message to send");
       }
     } else {
-      Alert.alert("Please enter mobile no");
+      Alert.alert("Please enter the number to send");
     }
   };
-  return { mobileNo, setMobileNo, message, setMessage, chatWhatsapp };
+
+  return {
+    message,
+    setMessage,
+    mobileNo,
+    setMobileNo,
+    chatWhatsapp,
+  };
 };

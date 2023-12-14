@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React from "react";
+import { Text, View } from "react-native";
 import Layout from "../components/Layout";
 import { openWhatsApp } from "../utils";
-import { tw } from "nativewind";
+import Input from "../components/Input";
+import { styles } from "../styles/style";
+import { Button, ButtonWhatsapp } from "../components/Button";
 
 const Landing = () => {
   const { message, setMessage, mobileNo, setMobileNo, chatWhatsapp } =
@@ -16,45 +12,28 @@ const Landing = () => {
 
   return (
     <Layout>
-      <View className="flex-1 items-center space-y-8">
-        <TextInput
+      <View className="flex-1 items-center space-y-5">
+        <Input
           value={message}
-          onChangeText={setMessage}
-          placeholder="Enter message"
-          multiline
+          onChange={setMessage}
+          placeholder="Enter Message"
           style={[styles.input, { height: 90 }]}
         />
-        <TextInput
+        <Input
           value={mobileNo}
-          onChangeText={setMobileNo}
-          placeholder="Enter Mobile"
-          style={styles.input}
-          keyboardType="numeric"
+          onChange={setMobileNo}
+          placeholder="Enter Phone Number"
+          style={styles.inputHp}
         />
-        <TouchableOpacity
-          onPress={chatWhatsapp}
-          className="bg-green-500 b-2 rounded-xl w-52 p-6"
-        >
-          <Text className="text-white text-center text-base">
-            Open WhatsApp message
-          </Text>
-        </TouchableOpacity>
+        <Button onPress={chatWhatsapp} />
+        <View className="flex-col">
+          <ButtonWhatsapp title="Herbayu" />
+          <ButtonWhatsapp title="Yusuf" />
+          <ButtonWhatsapp title="Gunawan" />
+        </View>
       </View>
     </Layout>
   );
 };
-
-const styles = StyleSheet.create({
-  input: {
-    width: 255,
-    height: 90,
-    padding: 10,
-    margin: 10,
-    backgroundColor: "#FFF",
-    borderColor: "#000",
-    borderRadius: 5,
-    borderWidth: 0.5,
-  },
-});
 
 export default Landing;
