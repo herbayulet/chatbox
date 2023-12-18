@@ -12,6 +12,8 @@ export const openWhatsApp = () => {
         Linking.openURL(url)
           .then((data) => {
             console.log(`WhatsApp Opened successfully ${data}`);
+            setMessage("");
+            setMobileNo("");
           })
           .catch(() => {
             Alert.alert("Make sure WhatsApp installed on your device");

@@ -5,7 +5,9 @@ exports.config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
+  hostname: "127.0.0.1",
   port: 4723,
+
   //
   // ==================
   // Specify Test Files
@@ -24,7 +26,7 @@ exports.config = {
   //
   specs: [
     // ToDo: define location for spec files here
-    "./test/cases/**/*.js",
+    "./test_project/cases/**/*.js",
   ],
   // Patterns to exclude.
   exclude: [
@@ -54,15 +56,17 @@ exports.config = {
   //
   capabilities: [
     {
-      // capabilities for local Appium web tests on an Android Emulator
       platformName: "Android",
-      browserName: "Chrome",
-      "appium:deviceName": "Android GoogleAPI Emulator",
-      "appium:platformVersion": "12.0",
-      "appium:automationName": "UiAutomator2",
+      platformVersion: "12.0",
+      deviceName: "Device",
+      appPackage: "com.herbayuuw.chatbox",
+      appActivity: "com.herbayuuw.chatbox.activity.MainTabActivity",
+      automationName: "UiAutomator2",
+      noReset: true,
+      // Tambahkan capabilities lainnya jika diperlukan
     },
   ],
-
+  path: "/wd/hub/",
   //
   // ===================
   // Test Configurations
