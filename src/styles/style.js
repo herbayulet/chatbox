@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     borderColor: "#000",
     borderRadius: 5,
     borderWidth: 0.5,
+    justifyContent: "flex-start",
   },
   button: {
     backgroundColor: "#25D366", // Ubah nilai warna latar belakang menjadi hijau WhatsApp

@@ -5,6 +5,7 @@ import { openWhatsApp } from "../utils";
 import Input from "../components/Input";
 import { styles } from "../styles/style";
 import { Button, ButtonWhatsapp } from "../components/Button";
+import { SelectNumber } from "../components/SelectNumber";
 
 const Landing = () => {
   const { message, setMessage, mobileNo, setMobileNo, chatWhatsapp } =
@@ -19,12 +20,7 @@ const Landing = () => {
           placeholder="Enter Message"
           style={[styles.input, { height: 90 }]}
         />
-        <Input
-          value={mobileNo}
-          onChange={setMobileNo}
-          placeholder="Enter Phone Number"
-          style={styles.inputHp}
-        />
+        <SelectNumber setMobileNo={setMobileNo} mobileNo={mobileNo} />
         <Button onPress={chatWhatsapp} />
         <View className="flex-col">
           <ButtonWhatsapp title="Herbayu" />
